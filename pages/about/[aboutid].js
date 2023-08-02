@@ -1,15 +1,18 @@
 import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
-const DetailPage = () => {
+const AboutdetailPage = () => {
   const details = [
     { id: 1, name: "Yash", role: "Senior Developer" },
     { id: 2, name: "Vaibhav", role: "Backend Developer" },
     { id: 3, name: "Suresh", role: "Frontend Developer" },
   ];
-  const router = useRouter();
+  const rounter = useRouter();
 
-  const id = router.query.newsId;
-  let developer = details.find((item) => item.id === parseInt(id));
+  const id = rounter.query.aboutid;
+
+  const developer = details.find((item) => item.id === parseInt(id));
+
   return (
     <div>
       {developer ? (
@@ -23,4 +26,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default AboutdetailPage;
